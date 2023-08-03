@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200&display=swap');
 
+*{
+    font-family: DM+Sans;
+    box-sizing: border-box;
+}
+
 .logo{
     height: 30px;
     width: 30px;
@@ -10,9 +15,6 @@
 }
 .PositionLinkNavBar{
     margin-right: 20px;
-}
-.FontsForProject{
-    font-family: DM+Sans;
 }
 .banner{
     width: 1200px;
@@ -40,4 +42,11 @@
 }
 .EspacamentoBlocosHospedagens2{
     padding-top: 20px;
+}
+.footerStyle{
+    justify-content:space-between;
+    border-top: 1px solid #c1c1c1;
+}
+.rowFooterStyle{
+    width: 100%;
 }
