@@ -12,7 +12,6 @@ services:
       MYSQL_PASSWORD: "${DB_WRITE_PASSWORD}"
     volumes:
       - database:/var/lib/mysql
-      - ./Migration/Initialization/structure.sql:/docker-entrypoint-initdb.d/structure.sql
     ports:
       - 3306:3306
     networks:
