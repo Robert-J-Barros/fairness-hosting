@@ -11,7 +11,7 @@ services:
       MYSQL_USER: "${DB_WRITE_USERNAME}"
       MYSQL_PASSWORD: "${DB_WRITE_PASSWORD}"
     volumes:
-      - database:/var/lib/mysql
+      - database:/application/database
     ports:
       - 3306:3306
     networks:
@@ -21,7 +21,6 @@ services:
     restart: always
     links:
       - app
-      - elasticsearch
     working_dir: /application
     volumes:
       - '.:/application'
@@ -36,9 +35,9 @@ services:
     working_dir: /application
     volumes:
       - '.:/application'
+      - './Build/php/local.ini:/usr/local/php/conf.d/local.ini'
     links:
       - mysql
-      - elasticsearch
     depends_on:
       - mysql
     env_file:
@@ -47,35 +46,10 @@ services:
       PHP_IDE_CONFIG: "serverName=cloud.fairness.tech"
     networks:
       - NetworkFairness
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-    environment:
-      discovery.type: "single-node"
-      ES_JAVA_OPTS: "-Xms2g -Xmx2g"
-      xpack.monitoring.enabled: "true"
-    volumes:
-      - esdata:/usr/share/elasticsearch/data
-    networks:
-      - NetworkFairness
-
-  kibana:
-    image: docker.elastic.co/kibana/kibana:7.7.0
-    ports:
-      - "5601:5601"
-    environment:
-      ELASTICSEARCH_URL: http://elasticsearch:9200
-    depends_on:
-      - elasticsearch
-    networks:
-      - NetworkFairness
 volumes:
   database:
   esdata:
     driver: local
-
 networks:
   NetworkFairness:
     driver: bridge
