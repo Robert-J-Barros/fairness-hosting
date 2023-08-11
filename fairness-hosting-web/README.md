@@ -44,9 +44,12 @@ Para rodar a API , você vai precisar adicionar as seguintes variáveis de ambie
 ```bash
 
 # Clone este repositório
-$ git clone 
+$ git clone https://github.com/Robert-J-Barros/fairness-hosting.git
 
 # Acesse a pasta do projeto no seu terminal/cmd
+$ cd fairness-hosting
+
+# Acesse a pasta do aplicação web do projeto no seu terminal/cmd
 $ cd fairness-hosting-web
 
 # Instale o framework angular
