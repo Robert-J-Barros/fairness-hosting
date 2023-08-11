@@ -12,21 +12,21 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src='assets/img/banner.png' class="d-block w-100" alt="...">
+            <img src="{{ asset('img/banner4.png')}}"  class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="assets/img/banner.png" class="d-block w-100" alt="...">
+            <img src="{{ asset('img/banner4.png')}}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="assets/img/banner.png" class="d-block w-100" alt="...">
+            <img src="{{ asset('img/banner4.png')}}"  class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
@@ -133,5 +133,41 @@
         </div>
 
     </div>
+</section>
+<section class="container mt-md-2 mt-lg-4">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1>Oque te oferecemos</h1>
+        </div>
+        <div class="d-flex mt-md-2 mt-lg-4 ">
+            <div class="col-6">
+                <img src="{{ asset('img/oqueteoferecemos1.jpg')}}"  alt="" class="oqueteoferecemosimg1">
+            </div>
+            <div class="col-6 flex-column align-items-center text-center oqueTeOferecemosCentralizandoImg">
+                <h2>Servidores Cloud</h2>
+                <p>Realizamos implementações de ambientes de infraestrutura em cloud, de forma simples e escalável, onde atuamos com serviços gerenciados como serverless e soluções para dados.</p>
+            </div>
+        </div>
+        <div class="d-flex mt-md-2 mt-lg-4 ">
+            <div class="col-6 oqueTeOferecemosCentralizandoImg">
+                <h2>Um Ambiente de acordo com a sua necessidade</h2>
+                <p>Desenvolvemos infraestruturas personalizadas sob medida para as necessidades de nossos clientes, criando ambientes de TI na nuvem que são eficientes, escaláveis e adaptados às demandas específicas. Nosso foco está em oferecer soluções gerenciadas, incluindo abordagens serverless e estratégias de dados inteligentes</p>
+            </div>
+            <div class="col-6 flex-column align-items-center text-center">
+                <img src="{{ asset('img/oqueteoferecemos2.png')}}"  alt="" class="oqueteoferecemosimg1">
+            </div>
+        </div>
+        <div class="d-flex mt-md-2 mt-lg-4 ">
+            <div class="col-6">
+                <img src="{{ asset('img/oqueteoferecemos3.jpg')}}"  alt="" class="oqueteoferecemosimg1">
+            </div>
+            <div class="col-6 flex-column align-items-center text-center oqueTeOferecemosCentralizandoImg">
+                <h2>Sustentação</h2>
+                <p>
+"Comprometidos com a sustentabilidade, oferecemos soluções de suporte técnico que garantem a estabilidade e o desempenho contínuo de sua infraestrutura. Nossa abordagem responsável visa maximizar a eficiência, minimizar o impacto ambiental e proporcionar um ambiente seguro para o crescimento sustentável de seu negócio na era digital."</p>
+            </div>
+        </div>
+    </div>
+
 </section>
 @endsection
