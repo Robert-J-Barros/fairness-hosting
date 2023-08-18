@@ -1,0 +1,11 @@
+{
+    "name": "Requisicoes",
+    "alias": "requisicoes",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Requisicoes\\Providers\\RequisicoesServiceProvider"
+    ],
+    "files": []
+}
