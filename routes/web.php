@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\DomainController;
+use Modules\Requisicoes\Http\Controllers\ApisController;
 
 Route::get('/', [DomainController::class, 'index'])->name('index');
 
@@ -22,3 +23,5 @@ Route::get('/whoAre', [DomainController::class, 'whoAre'])->name('whoAre');
 Route::get('/login', [DomainController::class, 'generalLogin'])->name('generalLogin');
 
 Route::get('/dominio', [DomainController::class, 'domain'])->name('domain');
+
+Route::get('/dominios', [ApisController::class, 'consultDomains'])->name('domains');

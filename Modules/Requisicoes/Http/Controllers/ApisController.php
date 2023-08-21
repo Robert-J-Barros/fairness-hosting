@@ -5,75 +5,28 @@ namespace Modules\Requisicoes\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Http;
 
 class ApisController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
-    public function index()
+    public function consultDomains()
     {
-        return view('requisicoes::index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
-    {
-        return view('requisicoes::create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('requisicoes::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('requisicoes::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
+        $headers = [
+            'Authorization' => 'sso-key 3mM44UdB6E6XbN_4wgpAzm17mzYjf7Vp6Bomi:E4exLr6KvmHQRsfm8PcW5F',
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json',
+        ];
+        
+        $data = [
+            'Browseimoveis.com'
+        ];
+        
+        // Faça a chamada à API usando o HTTP client do Laravel
+        $response = Http::withHeaders($headers)
+            ->post(env('CONSULT_DOMAIN_API'), $data);
+        
+        // Obtenha e imprima a resposta da API
+        $jsonResponse = $response->body();
+        echo $jsonResponse;
     }
 }

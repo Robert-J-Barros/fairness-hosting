@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,3 @@
 |
 */
 
-Route::prefix('requisicoes')->group(function() {
-    Route::get('/', 'RequisicoesController@index');
-});
